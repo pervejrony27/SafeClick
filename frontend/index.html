@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> SafeClick  — Phishing Link Detector</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/scanner.css" />
+    <link rel="stylesheet" href="css/results.css" />
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>🛡️</span>  SafeClick 
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Scanner</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="container">
+
+        <!-- Title -->
+        <h1 class="page-title">Phishing Link Detector</h1>
+        <p class="page-subtitle">
+            Paste any suspicious URL below to instantly check 
+            if it's a phishing link or safe to visit.
+        </p>
+
+        <!-- Scanner Input Section -->
+        <section class="scanner-section">
+            <div class="scanner-box">
+                <input 
+                    type="text" 
+                    id="url-input" 
+                    placeholder="Paste a suspicious URL here..."
+                    autocomplete="off"
+                    spellcheck="false"
+                />
+                <button id="scan-btn" class="scan-btn">
+                    🔍 Scan Now
+                </button>
+            </div>
+
+            <!-- Example Links -->
+            <div class="examples">
+                <p>Try these examples:</p>
+                <span class="example-link" onclick="fillExample('https://www.google.com')">
+                    google.com (safe)
+                </span>
+                <span class="example-link" onclick="fillExample('http://192.168.1.1/login/bank-secure/verify.php')">
+                    IP phishing link
+                </span>
+                <span class="example-link" onclick="fillExample('http://free-prize-winner.tk/claim-now?user=you@email.com')">
+                    suspicious link
+                </span>
+            </div>
+        </section>
+
+        <!-- Error Message -->
+        <div id="error-msg" class="error-msg" style="display: none;"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing URL for phishing patterns...</p>
+        </div>
+
+        <!-- Results Section -->
+        <section id="results" class="results-section" style="display: none;">
+            
+            <!-- Scanned URL -->
+            <div class="scanned-url">
+                Scanned URL: <span id="scanned-url-text"></span>
+            </div>
+
+            <!-- Score Circle -->
+            <div class="score-container">
+                <div id="score-circle" class="score-circle safe">
+                    <span id="score-number" class="score-number">0</span>
+                    <span class="score-label">/ 100</span>
+                </div>
+            </div>
+
+            <!-- Risk Badge -->
+            <div class="risk-badge-container">
+                <span id="risk-badge" class="risk-badge safe">SAFE</span>
+            </div>
+
+            <!-- Risk Description -->
+            <p id="risk-description" class="risk-description"></p>
+
+            <!-- Reasons List -->
+            <div class="reasons-box">
+                <h3>📋 Analysis Details:</h3>
+                <ul id="reasons-list"></ul>
+            </div>
+
+            <!-- Scan Again Button -->
+            <button class="scan-again-btn" onclick="resetScanner()">
+                🔄 Scan Another URL
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p>🛡️  SafeClick  — Phishing Detection System | University Project © 2025</p>
+    </footer>
+
+    <!-- ========== JS FILES (Order Matters!) ========== -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/scanner.js"></script>
+
+</body>
+</html>

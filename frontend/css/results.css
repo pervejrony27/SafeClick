@@ -1,0 +1,216 @@
+/* ============================================
+   RESULTS SECTION STYLES
+   ============================================ */
+
+/* ── Results Container ── */
+.results-section {
+    background: #111128;
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 25px;
+    border: 1px solid #1e1e3a;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Scanned URL Display ── */
+.scanned-url {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 25px;
+    word-break: break-all;
+    background: #0a0a1a;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.scanned-url span {
+    color: #00d4ff;
+    font-weight: 500;
+}
+
+/* ── Score Circle ── */
+.score-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.score-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 8px solid #27ae60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease;
+    position: relative;
+}
+
+.score-circle .score-number {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-circle .score-label {
+    font-size: 14px;
+    color: #888;
+    margin-top: 2px;
+}
+
+/* Score Circle Colors */
+.score-circle.safe {
+    border-color: #27ae60;
+    color: #27ae60;
+    box-shadow: 0 0 30px rgba(39, 174, 96, 0.15);
+}
+
+.score-circle.suspicious {
+    border-color: #f39c12;
+    color: #f39c12;
+    box-shadow: 0 0 30px rgba(243, 156, 18, 0.15);
+}
+
+.score-circle.phishing {
+    border-color: #e74c3c;
+    color: #e74c3c;
+    box-shadow: 0 0 30px rgba(231, 76, 60, 0.15);
+}
+
+/* ── Risk Badge ── */
+.risk-badge-container {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.risk-badge.safe {
+    background: rgba(39, 174, 96, 0.15);
+    color: #27ae60;
+    border: 2px solid rgba(39, 174, 96, 0.4);
+}
+
+.risk-badge.suspicious {
+    background: rgba(243, 156, 18, 0.15);
+    color: #f39c12;
+    border: 2px solid rgba(243, 156, 18, 0.4);
+}
+
+.risk-badge.phishing {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 2px solid rgba(231, 76, 60, 0.4);
+}
+
+/* ── Risk Description ── */
+.risk-description {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ── Reasons Box ── */
+.reasons-box {
+    text-align: left;
+    background: #0a0a1a;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #1e1e3a;
+}
+
+.reasons-box h3 {
+    font-size: 16px;
+    color: #00d4ff;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reasons-box ul {
+    list-style: none;
+}
+
+.reasons-box li {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid #333;
+    color: #ccc;
+}
+
+/* Reason severity colors */
+.reasons-box li.reason-danger {
+    border-left-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+}
+
+.reasons-box li.reason-warning {
+    border-left-color: #f39c12;
+    background: rgba(243, 156, 18, 0.05);
+}
+
+.reasons-box li.reason-safe {
+    border-left-color: #27ae60;
+    background: rgba(39, 174, 96, 0.05);
+}
+
+/* ── Scan Again Button ── */
+.scan-again-btn {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 15px;
+    background: transparent;
+    color: #00d4ff;
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.scan-again-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .results-section {
+        padding: 25px 20px;
+    }
+
+    .score-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .score-circle .score-number {
+        font-size: 40px;
+    }
+}

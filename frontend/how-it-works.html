@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Works —  SafeClick </title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* Extra styles for this page */
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            color: #000;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-content h4 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .step-content p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .feature-item {
+            background: #0a0a1a;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #ccc;
+            border-left: 3px solid #00d4ff;
+        }
+        .score-explain {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .score-box {
+            flex: 1;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .score-box.green {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+            color: #27ae60;
+        }
+        .score-box.orange {
+            background: rgba(243, 156, 18, 0.1);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            color: #f39c12;
+        }
+        .score-box.red {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            color: #e74c3c;
+        }
+        @media (max-width: 600px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .score-explain { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>🛡️</span>  SafeClick 
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Scanner</a>
+            <a href="how-it-works.html" class="active">How It Works</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <div class="container">
+
+        <h1 class="page-title">How It Works</h1>
+        <p class="page-subtitle">
+            Understand how  SafeClick  analyzes URLs to detect phishing links.
+        </p>
+
+        <!-- Step by Step Process -->
+        <div class="card">
+            <h2>🔄 Step-by-Step Process</h2>
+            <br/>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>You Paste a URL</h4>
+                    <p>Enter any suspicious URL into the scanner input box and click Scan.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Feature Extraction</h4>
+                    <p>Our system extracts 15+ features from the URL structure like 
+                    length, special characters, domain info, and more.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>ML Model Prediction</h4>
+                    <p>The extracted features are fed into our trained Random Forest 
+                    model which was trained on 50,000+ URLs.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Score & Explanation</h4>
+                    <p>You get a phishing score (0-100) and detailed reasons 
+                    explaining why the URL was flagged.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features We Analyze -->
+        <div class="card">
+            <h2>🔍 Features We Analyze</h2>
+            <p>Our model looks at these URL characteristics:</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">📏 URL Length</div>
+                <div class="feature-item">🔢 Number of Dots</div>
+                <div class="feature-item">🌐 Has IP Address</div>
+                <div class="feature-item">📧 Has @ Symbol</div>
+                <div class="feature-item">🔒 HTTPS or HTTP</div>
+                <div class="feature-item">📂 URL Depth</div>
+                <div class="feature-item">⚠️ Suspicious Keywords</div>
+                <div class="feature-item">🔣 Special Characters</div>
+                <div class="feature-item">🏷️ Domain Length</div>
+                <div class="feature-item">🌍 Number of Subdomains</div>
+            </div>
+        </div>
+
+        <!-- Score Meaning -->
+        <div class="card">
+            <h2>📊 Understanding the Score</h2>
+            <p>The phishing score ranges from 0 to 100:</p>
+
+            <div class="score-explain">
+                <div class="score-box green">
+                    <div style="font-size: 24px;">0 — 39</div>
+                    <div>✅ SAFE</div>
+                    <div style="font-weight: 400; font-size: 13px; margin-top: 5px;">
+                        Low risk, likely legitimate
+                    </div>
+                </div>
+                <div class="score-box orange">
+                    <div style="font-size: 24px;">40 — 69</div>
+                    <div>⚡ SUSPICIOUS</div>
+                    <div style="font-weight: 400; font-size: 13px; margin-top: 5px;">
+                        Proceed with caution
+                    </div>
+                </div>
+                <div class="score-box red">
+                    <div style="font-size: 24px;">70 — 100</div>
+                    <div>🚨 PHISHING</div>
+                    <div style="font-weight: 400; font-size: 13px; margin-top: 5px;">
+                        High risk, do NOT click
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>🛡️  SafeClick  — University Project © 2025</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+backend/venv/
+venv/
+env/
+.env
+
+# Model Files (too large)
+backend/models/phishing_model.pkl
+backend/models/scaler.pkl
+
+# Dataset Files (too large)
+backend/data/raw/*.csv
+backend/data/processed/final_dataset.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# IDE
+.idea/
