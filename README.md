@@ -139,34 +139,25 @@ SafeClick/
 
 ### Installation
 
-#### 1. Clone the Repository
+#### Step 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SafeClick.git
+git clone https://github.com/pervej_rony27/SafeClick.git
 cd SafeClick
 ``` 
 
-```
-Frontend (localhost:5500)              Backend (localhost:5000)
+### Step 2: Setup Backend
+cd backend
 
-index.html                             run.py
-    │                                      │
-    │ User clicks "Scan Now"               │
-    ▼                                      │
-js/api.js                                  │
-    │                                      │
-    │ fetch("localhost:5000/api/scan") ───► api/routes.py
-    │                                      │
-    │                                      ├── ml/feature_extractor.py
-    │                                      ├── ml/predict.py
-    │                                      ├── ml/explainer.py
-    │                                      │
-    │ JSON response ◄────────────────────── │
-    ▼                                      
-js/results.js
-    │
-    Shows score + reasons on page
-    ```
+# Create virtual environment
+python -m venv venv
 
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
 
-    
+# Install all dependencies
+pip install -r requirements.txt
+
