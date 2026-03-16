@@ -25,7 +25,7 @@
 - 😰 Most people can't tell a phishing link from a real one
 
 ### Our Solution
-SafeClick analyzes any URL using **36 intelligent features** and a **Random Forest ML model** trained on **70,000+ real URLs** to give users:
+SafeClick analyzes any URL using **36 intelligent features** and a **Random Forest ML model** trained on **3,00,000+ real URLs** to give users:
 - A **phishing score** (0-100)
 - A **risk level** (Safe / Suspicious / Phishing)
 - **Detailed reasons** explaining why the URL is dangerous
@@ -145,3 +145,28 @@ SafeClick/
 git clone https://github.com/YOUR_USERNAME/SafeClick.git
 cd SafeClick
 ``` 
+
+```
+Frontend (localhost:5500)              Backend (localhost:5000)
+
+index.html                             run.py
+    │                                      │
+    │ User clicks "Scan Now"               │
+    ▼                                      │
+js/api.js                                  │
+    │                                      │
+    │ fetch("localhost:5000/api/scan") ───► api/routes.py
+    │                                      │
+    │                                      ├── ml/feature_extractor.py
+    │                                      ├── ml/predict.py
+    │                                      ├── ml/explainer.py
+    │                                      │
+    │ JSON response ◄────────────────────── │
+    ▼                                      
+js/results.js
+    │
+    Shows score + reasons on page
+    ```
+
+
+    
