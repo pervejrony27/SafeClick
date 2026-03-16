@@ -139,16 +139,18 @@ SafeClick/
 
 ### Installation
 
-#### Step 1. Clone the Repository
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/pervej_rony27/SafeClick.git
 cd SafeClick
 ``` 
 
+
 ### Step 2: Setup Backend
 cd backend
 
+```
 # Create virtual environment
 python -m venv venv
 
@@ -160,4 +162,4 @@ source venv/bin/activate
 
 # Install all dependencies
 pip install -r requirements.txt
-
+```
