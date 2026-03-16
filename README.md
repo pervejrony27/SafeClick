@@ -51,7 +51,69 @@ SafeClick analyzes any URL using **36 intelligent features** and a **Random Fore
 ---
 
 ## 🏗️ Project Structure
-
+```
+SafeClick/
+│
+├── 📁 backend/ ← Python (Flask + Machine Learning)
+│ ├── 📁 api/
+│ │ ├── init.py
+│ │ ├── app.py ← Flask app with CORS
+│ │ └── routes.py ← API endpoints (/api/scan)
+│ │
+│ ├── 📁 ml/
+│ │ ├── init.py
+│ │ ├── feature_extractor.py ← Extracts 36 features from URL
+│ │ ├── predict.py ← Loads model & predicts score
+│ │ ├── explainer.py ← Generates human-readable reasons
+│ │ └── train_model.py ← Training pipeline
+│ │
+│ ├── 📁 models/
+│ │ ├── phishing_model.pkl ← Trained ML model (generated)
+│ │ ├── scaler.pkl ← Feature scaler (generated)
+│ │ └── model_info.json ← Model metadata & metrics
+│ │
+│ ├── 📁 data/
+│ │ ├── 📁 raw/ ← Raw dataset from Kaggle
+│ │ ├── 📁 processed/ ← Cleaned & filtered dataset
+│ │ ├── download_data.py ← Sample data generator
+│ │ └── filter_dataset.py ← Filters 450K → 70K URLs
+│ │
+│ ├── 📁 notebooks/
+│ │ ├── 01_data_exploration.ipynb
+│ │ ├── 02_feature_engineering.ipynb
+│ │ ├── 03_model_training.ipynb
+│ │ └── 04_evaluation.ipynb
+│ │
+│ ├── 📁 tests/
+│ │ ├── test_features.py ← Feature extraction tests
+│ │ └── test_api.py ← API endpoint tests
+│ │
+│ ├── config.py ← All settings & constants
+│ ├── requirements.txt ← Python dependencies
+│ └── run.py ← Start backend server
+│
+├── 📁 frontend/ ← HTML + CSS + JavaScript
+│ ├── index.html ← Main scanner page
+│ ├── about.html ← About the project
+│ ├── how-it-works.html ← How it works page
+│ │
+│ ├── 📁 css/
+│ │ ├── style.css ← Global styles
+│ │ ├── scanner.css ← Scanner section styles
+│ │ └── results.css ← Results display styles
+│ │
+│ ├── 📁 js/
+│ │ ├── api.js ← ⭐ Connects frontend to backend
+│ │ ├── scanner.js ← Scanner form logic
+│ │ ├── results.js ← Results display + animation
+│ │ └── utils.js ← Helper functions + tips
+│ │
+│ └── 📁 assets/
+│ └── 📁 images/
+│
+├── .gitignore
+└── README.md
+```
 
 ## 💻 Technology Stack
 
